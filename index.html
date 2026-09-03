@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joshi Properties | Luxury Real Estate Visakhapatnam</title>
+    <meta name="description" content="Discover premium plots, flats, and villas in Gajuwaka and Visakhapatnam.">
+    
+    <!-- Elegant Font Pairing: Playfair Display (Serif) & Inter (Sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind CSS (Standard CDN - No custom config to ensure 100% rendering) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Small CSS block for fonts & pure-CSS smooth transitions -->
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-serif { font-family: 'Playfair Display', serif; }
+        
+        /* Ensures the mobile menu prevents background scrolling */
+        body.modal-open { overflow: hidden; }
+
+        /* Subtle image zoom on hover for premium feel */
+        .img-hover-zoom { transition: transform 0.8s ease; }
+        .group:hover .img-hover-zoom { transform: scale(1.05); }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800 antialiased selection:bg-amber-600 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md border-b border-stone-200 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center h-20">
+            
+            <!-- Logo -->
+            <a href="#hero" class="flex items-center gap-3">
+                <i data-lucide="building" class="w-8 h-8 text-amber-600"></i>
+                <div class="flex flex-col">
+                    <span class="text-xl font-bold tracking-tight text-stone-900 leading-none">JOSHI PROPERTIES</span>
+                    <span class="text-[9px] font-semibold uppercase tracking-[0.2em] text-stone-500 mt-1">Vizag Real Estate</span>
+                </div>
+            </a>
+            
+            <!-- Desktop Links -->
+            <div class="hidden lg:flex items-center gap-10 text-[13px] font-semibold uppercase tracking-widest text-stone-600">
+                <a href="#properties" class="hover:text-amber-600 transition-colors">Portfolios</a>
+                <a href="#why-us" class="hover:text-amber-600 transition-colors">Expertise</a>
+                <a href="#testimonials" class="hover:text-amber-600 transition-colors">Clients</a>
+                <a href="#founder" class="hover:text-amber-600 transition-colors">The Founder</a>
+            </div>
+            
+            <!-- Desktop Actions -->
+            <div class="hidden lg:flex items-center gap-6">
+                <a href="tel:+919701738676" class="flex items-center gap-2 text-sm font-semibold text-stone-900 hover:text-amber-600 transition-colors">
+                    <i data-lucide="phone" class="w-4 h-4"></i> +91 97017 38676
+                </a>
+                <button onclick="openModal()" class="px-6 py-3 bg-stone-900 text-white font-semibold text-xs uppercase tracking-widest hover:bg-amber-600 transition-colors">
+                    Enquire Now
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="lg:hidden p-2 text-stone-900" onclick="toggleMobileMenu()">
+                <i data-lucide="menu" id="menu-icon" class="w-7 h-7"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-40 hidden flex-col items-center justify-center opacity-0 transition-opacity duration-300 pt-20">
+        <div class="flex flex-col items-center gap-8 text-2xl font-serif text-stone-900">
+            <a href="#hero" onclick="toggleMobileMenu()" class="hover:text-amber-600">Home</a>
+            <a href="#properties" onclick="toggleMobileMenu()" class="hover:text-amber-600">Exclusive Properties</a>
+            <a href="#why-us" onclick="toggleMobileMenu()" class="hover:text-amber-600">Why Choose Us</a>
+            <a href="#founder" onclick="toggleMobileMenu()" class="hover:text-amber-600">Meet the Founder</a>
+            
+            <div class="w-16 h-[1px] bg-stone-200 my-2"></div>
+            
+            <a href="tel:+919701738676" class="flex items-center gap-2 text-lg font-sans font-bold text-amber-600">
+                <i data-lucide="phone" class="w-5 h-5"></i> +91 97017 38676
+            </a>
+            <button onclick="toggleMobileMenu(); openModal();" class="px-8 py-4 bg-stone-900 text-white font-sans font-bold text-xs uppercase tracking-widest mt-2">
+                Schedule a Visit
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative w-full h-[90vh] min-h-[600px] mt-20 flex items-center justify-center">
+        <!-- Background Image -->
+        <div class="absolute inset-0 w-full h-full">
+            <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=2000&auto=format&fit=crop" alt="Luxury Villa Visakhapatnam" class="w-full h-full object-cover">
+        </div>
+        
+        <!-- Dark Overlay for Readability -->
+        <div class="absolute inset-0 bg-stone-900/40"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-stone-900/60 via-transparent to-stone-900/80"></div>
+        
+        <!-- Content -->
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <span class="block text-amber-400 font-bold uppercase tracking-[0.2em] text-xs mb-6">Visakhapatnam's Premier Real Estate</span>
+            
+            <h1 class="text-white text-5xl md:text-7xl lg:text-8xl font-serif font-bold tracking-tight mb-6 drop-shadow-lg">
+                Find a Place That <br> <span class="italic font-normal">Feels Like Yours.</span>
+            </h1>
+            
+            <p class="text-stone-200 max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed mb-10">
+                Curating the finest plots, luxury flats, and independent villas across Gajuwaka and Visakhapatnam for those who demand excellence.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <button onclick="openModal()" class="w-full sm:w-auto px-10 py-4 bg-amber-600 text-white font-bold text-sm uppercase tracking-widest hover:bg-stone-900 transition-colors">
+                    Book Consultation
+                </button>
+                <a href="https://wa.me/919701738676?text=Hi%20Satish,%20I'm%20interested%20in%20a%20property%20consultation." target="_blank" class="w-full sm:w-auto px-10 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white font-bold text-sm uppercase tracking-widest hover:bg-white hover:text-stone-900 transition-colors flex items-center justify-center gap-2">
+                    <i data-lucide="message-square" class="w-4 h-4"></i> WhatsApp Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Section -->
+    <section id="properties" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-amber-600 font-bold uppercase tracking-widest text-xs">Our Portfolios</span>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-stone-900 mt-3 mb-4">Exclusive Collections.</h2>
+                <div class="w-16 h-1 bg-amber-600 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <!-- Card 1: Plots -->
+                <div class="group bg-stone-50 border border-stone-200 flex flex-col hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative h-64 overflow-hidden bg-stone-200">
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80" alt="Open Plots" class="w-full h-full object-cover img-hover-zoom">
+                        <div class="absolute top-4 right-4 bg-white px-3 py-1 text-xs font-bold uppercase tracking-widest text-stone-900">01</div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold font-serif text-stone-900 mb-4">Surveyed Plots</h3>
+                        <ul class="space-y-3 mb-8 text-stone-600 text-sm flex-grow">
+                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0"></i> VMRDA & DTCP Approved</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0"></i> 100% Clear Legal Titles</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0"></i> Spot Boundary Demarcation</li>
+                        </ul>
+                        <div class="border-t border-stone-200 pt-6 mt-auto">
+                            <p class="text-xs text-stone-500 font-semibold uppercase tracking-wider mb-4"><i data-lucide="map-pin" class="w-3 h-3 inline"></i> Kurmannapalem, Steel Plant</p>
+                            <button onclick="openModal('Plots')" class="w-full py-3 border-2 border-stone-900 text-stone-900 font-bold text-xs uppercase tracking-widest hover:bg-stone-900 hover:text-white transition-colors">Request Tour</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Flats -->
+                <div class="group bg-stone-50 border border-stone-200 flex flex-col hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative h-64 overflow-hidden bg-stone-200">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Modern Flats" class="w-full h-full object-cover img-hover-zoom">
+                        <div class="absolute top-4 right-4 bg-white px-3 py-1 text-xs font-bold uppercase tracking-widest text-stone-900">02</div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold font-serif text-stone-900 mb-4">2 & 3 BHK Flats</h3>
+                        <ul class="space-y-3 mb-8 text-stone-600 text-sm flex-grow">
+                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0"></i> Ready-to-move & Under-construction</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0"></i> 24/7 Generator & Covered Parking</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0"></i> Pre-approved Bank Loans</li>
+                        </ul>
+                        <div class="border-t border-stone-200 pt-6 mt-auto">
+                            <p class="text-xs text-stone-500 font-semibold uppercase tracking-wider mb-4"><i data-lucide="map-pin" class="w-3 h-3 inline"></i> Gajuwaka Main, Sheela Nagar</p>
+                            <button onclick="openModal('Flats')" class="w-full py-3 border-2 border-stone-900 text-stone-900 font-bold text-xs uppercase tracking-widest hover:bg-stone-900 hover:text-white transition-colors">Request Tour</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Villas -->
+                <div class="group bg-stone-50 border border-stone-200 flex flex-col hover:shadow-xl transition-shadow duration-300 md:col-span-2 lg:col-span-1">
+                    <div class="relative h-64 overflow-hidden bg-stone-200">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Independent Villas" class="w-full h-full object-cover img-hover-zoom">
+                        <div class="absolute top-4 right-4 bg-white px-3 py-1 text-xs font-bold uppercase tracking-widest text-stone-900">03</div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold font-serif text-stone-900 mb-4">Independent Villas</h3>
+                        <ul class="space-y-3 mb-8 text-stone-600 text-sm flex-grow">
+                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0"></i> Private Compounds & Duplexes</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0"></i> 100% Vastu Compliant Architecture</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0"></i> Premium Teakwood Interiors</li>
+                        </ul>
+                        <div class="border-t border-stone-200 pt-6 mt-auto">
+                            <p class="text-xs text-stone-500 font-semibold uppercase tracking-wider mb-4"><i data-lucide="map-pin" class="w-3 h-3 inline"></i> Gajuwaka Colonies, Sheela Nagar</p>
+                            <button onclick="openModal('Villas')" class="w-full py-3 border-2 border-stone-900 text-stone-900 font-bold text-xs uppercase tracking-widest hover:bg-stone-900 hover:text-white transition-colors">Request Tour</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="py-24 bg-stone-900 text-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="text-amber-500 font-bold uppercase tracking-widest text-xs">The Joshi Standard</span>
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold mt-3 mb-6">Transparency at <br>Every Step.</h2>
+                    <p class="text-stone-400 text-lg leading-relaxed mb-8">
+                        We operate strictly on direct, ethical seller-to-buyer pricing structures. What you see is what you pay—no hidden fees, no last-minute broker margins.
+                    </p>
+                    <a href="tel:+919701738676" class="inline-flex px-8 py-4 bg-amber-600 text-white font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-stone-900 transition-colors items-center gap-2">
+                        <i data-lucide="phone" class="w-4 h-4"></i> Call +91 97017 38676
+                    </a>
+                </div>
+                
+                <div class="grid sm:grid-cols-2 gap-8">
+                    <div class="bg-stone-800 p-8 border border-stone-700 hover:border-amber-600 transition-colors">
+                        <i data-lucide="file-check" class="w-8 h-8 text-amber-500 mb-4"></i>
+                        <h4 class="text-xl font-bold font-serif mb-2">Clear Titles</h4>
+                        <p class="text-stone-400 text-sm">Rigorous legal scrutiny including Encumbrance Certificate (EC) and link document verification.</p>
+                    </div>
+                    <div class="bg-stone-800 p-8 border border-stone-700 hover:border-amber-600 transition-colors">
+                        <i data-lucide="handshake" class="w-8 h-8 text-amber-500 mb-4"></i>
+                        <h4 class="text-xl font-bold font-serif mb-2">Direct Contact</h4>
+                        <p class="text-stone-400 text-sm">No anonymous agents. You get personalized consultation directly with founder Satish Ragala.</p>
+                    </div>
+                    <div class="bg-stone-800 p-8 border border-stone-700 hover:border-amber-600 transition-colors">
+                        <i data-lucide="map" class="w-8 h-8 text-amber-500 mb-4"></i>
+                        <h4 class="text-xl font-bold font-serif mb-2">Approved Layouts</h4>
+                        <p class="text-stone-400 text-sm">Strict adherence to VMRDA & DTCP approved layouts featuring wide roads and infrastructure.</p>
+                    </div>
+                    <div class="bg-stone-800 p-8 border border-stone-700 hover:border-amber-600 transition-colors">
+                        <i data-lucide="pen-tool" class="w-8 h-8 text-amber-500 mb-4"></i>
+                        <h4 class="text-xl font-bold font-serif mb-2">Reg. Support</h4>
+                        <p class="text-stone-400 text-sm">Complete, white-glove guidance through the Sub-Registrar Office processes in Gajuwaka.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section id="founder" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
+            <!-- Image Column -->
+            <div class="relative w-full max-w-md mx-auto lg:mx-0 order-2 lg:order-1">
+                <div class="absolute top-4 -left-4 w-full h-full border-2 border-amber-600 -z-10"></div>
+                <img src="https://i.ibb.co/Q24XT28/771547786-3145958255613967-7888743051322383778-n.jpg" alt="Satish Ragala" class="w-full h-auto object-cover shadow-xl grayscale hover:grayscale-0 transition-all duration-700">
+                <div class="absolute -bottom-6 -right-6 bg-stone-900 text-white p-6 shadow-xl border border-stone-800">
+                    <h4 class="font-bold text-xl font-serif">Satish Ragala</h4>
+                    <p class="text-xs text-amber-500 font-bold uppercase tracking-widest mt-1">Founder & MD</p>
+                </div>
+            </div>
+
+            <!-- Text Column -->
+            <div class="order-1 lg:order-2">
+                <span class="text-amber-600 font-bold uppercase tracking-widest text-xs">The Visionary</span>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-stone-900 mt-3 mb-8">A Foundation <br>Built on Trust.</h2>
+                
+                <blockquote class="text-xl md:text-2xl font-serif italic text-stone-600 leading-relaxed pl-6 border-l-4 border-amber-600 mb-8">
+                    "Every piece of land or home represents a family's lifetime savings. We believe in total transparency, clear titles, and personally walking clients through every inch of the property."
+                </blockquote>
+                
+                <ul class="space-y-4 text-stone-700 font-medium mb-10">
+                    <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-amber-600 w-5 h-5"></i> 10+ Years Visakhapatnam Market Experience</li>
+                    <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-amber-600 w-5 h-5"></i> Dedicated Local Gajuwaka Presence (530026)</li>
+                    <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-amber-600 w-5 h-5"></i> Direct Proprietor Contact (No Middlemen)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials (Grid based for guaranteed rendering) -->
+    <section id="testimonials" class="py-24 bg-stone-50 border-t border-stone-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <i data-lucide="quote" class="w-10 h-10 text-amber-600 mx-auto mb-4 opacity-50"></i>
+                <h2 class="text-4xl font-serif font-bold text-stone-900 mb-4">Client Experiences</h2>
+                <p class="text-stone-500">Real stories from families who found their perfect property.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-10 border border-stone-200 hover:shadow-lg transition-shadow">
+                    <div class="flex text-amber-500 mb-6">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-stone-600 mb-8 font-serif italic text-lg leading-relaxed">"Buying a plot can be stressful with legalities, but Satish made it incredibly transparent. He provided the EC and link documents on day one. Seamless registry."</p>
+                    <div class="border-t border-stone-100 pt-6">
+                        <h4 class="font-bold text-sm text-stone-900 uppercase tracking-widest">Ramesh K.</h4>
+                        <p class="text-xs text-stone-500 mt-1">Plot Buyer, Steel Plant</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-10 border border-stone-200 hover:shadow-lg transition-shadow">
+                    <div class="flex text-amber-500 mb-6">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-stone-600 mb-8 font-serif italic text-lg leading-relaxed">"The best part about Joshi Properties is there are no middlemen. You deal directly with the founder. Satish personally showed us 4 flats until we found the perfect one."</p>
+                    <div class="border-t border-stone-100 pt-6">
+                        <h4 class="font-bold text-sm text-stone-900 uppercase tracking-widest">Srinivas R.</h4>
+                        <p class="text-xs text-stone-500 mt-1">Flat Buyer, Sheela Nagar</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-10 border border-stone-200 hover:shadow-lg transition-shadow">
+                    <div class="flex text-amber-500 mb-6">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-stone-600 mb-8 font-serif italic text-lg leading-relaxed">"Zero hidden brokerage. What was quoted was exactly what we paid. Their support during the Gajuwaka sub-registrar office process was exceptional."</p>
+                    <div class="border-t border-stone-100 pt-6">
+                        <h4 class="font-bold text-sm text-stone-900 uppercase tracking-widest">Priya M.</h4>
+                        <p class="text-xs text-stone-500 mt-1">Villa Buyer, Gajuwaka</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-950 text-stone-400 py-16 border-t border-stone-900">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-10 mb-12">
+                <div>
+                    <div class="flex items-center gap-3 text-white mb-6">
+                        <i data-lucide="building" class="w-6 h-6 text-amber-500"></i>
+                        <span class="text-xl font-bold tracking-tight">JOSHI PROPERTIES</span>
+                    </div>
+                    <p class="text-sm leading-relaxed max-w-sm mb-6">
+                        Main Road, Gajuwaka<br>
+                        Visakhapatnam, Andhra Pradesh — 530026<br>
+                        Mon - Sun: 9:00 AM - 8:00 PM
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="tel:+919701738676" class="w-10 h-10 border border-stone-700 rounded-full flex items-center justify-center hover:bg-amber-600 hover:text-white hover:border-amber-600 transition-colors"><i data-lucide="phone" class="w-4 h-4"></i></a>
+                        <a href="mailto:info@joshiproperties.com" class="w-10 h-10 border border-stone-700 rounded-full flex items-center justify-center hover:bg-amber-600 hover:text-white hover:border-amber-600 transition-colors"><i data-lucide="mail" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+                
+                <div class="md:text-right">
+                    <h4 class="text-white font-serif font-bold text-2xl mb-6">Ready to find your place?</h4>
+                    <button onclick="openModal()" class="px-8 py-4 border border-amber-600 text-amber-500 font-bold text-xs uppercase tracking-widest hover:bg-amber-600 hover:text-white transition-colors inline-block">
+                        Schedule a Tour
+                    </button>
+                </div>
+            </div>
+            
+            <div class="w-full h-[1px] bg-stone-800 mb-8"></div>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs uppercase tracking-widest">
+                <p>&copy; 2026 Joshi Properties Vizag.</p>
+                <p>Proprietor: Satish Ragala</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Enquiry Modal -->
+    <div id="enquiry-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-stone-900/80 backdrop-blur-sm" onclick="closeModal()"></div>
+        
+        <div class="relative w-full max-w-md bg-white p-10 shadow-2xl transition-all duration-300 transform scale-95 opacity-0" id="modal-content">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-stone-400 hover:text-stone-900 transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            
+            <h3 class="text-3xl font-bold font-serif mb-2 text-stone-900">Request Tour</h3>
+            <p class="text-sm text-stone-500 mb-8">Enter your details to arrange a private viewing with Satish.</p>
+            
+            <form onsubmit="handleModalSubmit(event)" class="space-y-6">
+                <div>
+                    <input type="text" id="modal-name" placeholder="Full Name" required class="w-full bg-transparent border-b border-stone-300 py-3 text-stone-900 placeholder-stone-500 focus:outline-none focus:border-amber-600 transition-colors">
+                </div>
+                <div>
+                    <input type="tel" id="modal-phone" placeholder="Phone Number" required class="w-full bg-transparent border-b border-stone-300 py-3 text-stone-900 placeholder-stone-500 focus:outline-none focus:border-amber-600 transition-colors">
+                </div>
+                <div>
+                    <select id="modal-type" class="w-full bg-transparent border-b border-stone-300 py-3 text-stone-600 focus:outline-none focus:border-amber-600 transition-colors appearance-none rounded-none cursor-pointer">
+                        <option value="General Site Visit">General Inquiry</option>
+                        <option value="Plots">Surveyed Plots</option>
+                        <option value="Flats">Flats / Apartments</option>
+                        <option value="Villas">Villas / Duplexes</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full py-4 bg-stone-900 text-white font-bold text-xs uppercase tracking-widest hover:bg-amber-600 transition-colors mt-4">
+                    Send via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Mobile Sticky Footer Bar -->
+    <div class="lg:hidden fixed bottom-0 w-full bg-white border-t border-stone-200 z-40 flex shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+        <a href="tel:+919701738676" class="flex-1 flex flex-col items-center justify-center py-3 text-stone-600 active:bg-stone-50">
+            <i data-lucide="phone" class="w-5 h-5 mb-1 text-stone-900"></i>
+            <span class="text-[10px] font-bold uppercase tracking-widest">Call</span>
+        </a>
+        <div class="w-[1px] bg-stone-200 my-2"></div>
+        <a href="https://wa.me/919701738676?text=Hi%20Satish,%20I%20would%20like%20to%20know%20more%20about%20properties%20in%20Vizag." target="_blank" class="flex-1 flex flex-col items-center justify-center py-3 text-stone-600 active:bg-stone-50">
+            <i data-lucide="message-circle" class="w-5 h-5 mb-1 text-stone-900"></i>
+            <span class="text-[10px] font-bold uppercase tracking-widest">WhatsApp</span>
+        </a>
+        <div class="w-[1px] bg-stone-200 my-2"></div>
+        <button onclick="openModal()" class="flex-1 flex flex-col items-center justify-center py-3 text-stone-600 active:bg-stone-50">
+            <i data-lucide="calendar" class="w-5 h-5 mb-1 text-amber-600"></i>
+            <span class="text-[10px] font-bold uppercase tracking-widest text-amber-600">Tour</span>
+        </button>
+    </div>
+    
+    <!-- Mobile bottom spacing fix -->
+    <div class="h-16 lg:hidden bg-stone-950"></div>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Mobile Menu Logic
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        let isMenuOpen = false;
+
+        function toggleMobileMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                setTimeout(() => {
+                    mobileMenu.classList.remove('opacity-0');
+                    mobileMenu.classList.add('opacity-100');
+                }, 10);
+                document.body.classList.add('modal-open');
+                menuIcon.setAttribute('data-lucide', 'x');
+            } else {
+                mobileMenu.classList.remove('opacity-100');
+                mobileMenu.classList.add('opacity-0');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300); 
+                document.body.classList.remove('modal-open');
+                menuIcon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        }
+
+        // Modal Logic
+        const modal = document.getElementById('enquiry-modal');
+        const modalContent = document.getElementById('modal-content');
+        const modalTypeSelect = document.getElementById('modal-type');
+
+        function openModal(category = '') {
+            modal.classList.remove('hidden');
+            document.body.classList.add('modal-open');
+            
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+
+            if (category) {
+                modalTypeSelect.value = category;
+            }
+        }
+
+        function closeModal() {
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            modalContent.classList.add('scale-95', 'opacity-0');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.classList.remove('modal-open');
+            }, 300);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        // Form Submit to WhatsApp
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('modal-name').value;
+            const phone = document.getElementById('modal-phone').value;
+            const type = document.getElementById('modal-type').value;
+
+            const text = `Hi Satish, I would like to schedule a site tour.\n\nName: ${name}\nPhone: ${phone}\nInterested in: ${type}`;
+            const encodedText = encodeURIComponent(text);
+            window.open(`https://wa.me/919701738676?text=${encodedText}`, '_blank');
+            closeModal();
+        }
+    </script>
+</body>
+</html>
